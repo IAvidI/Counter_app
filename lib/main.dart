@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:prog1/login_screen.dart';
 
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,6 +17,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      locale: const Locale('ru', 'RU'),
+      supportedLocales: S.delegate.supportedLocales,
       home: const LoginScreen(),
     );
   }
